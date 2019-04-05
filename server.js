@@ -15,7 +15,7 @@ const corsOptions = {
 }
 
 mongoose.connect(
-  `mongodb://${procss.env.MONGODB_USER}:${procss.env.MONGODB_PASSWORD}@ds163905.mlab.com:63905/${process.env.MONGODB_DBNAME}`,
+  `mongodb://${process.env.MONGODB_USER}:${process.env.MONGODB_PASSWORD}@ds163905.mlab.com:63905/${process.env.MONGODB_DBNAME}`,
   {
     useCreateIndex: true,
     useNewUrlParser: true
