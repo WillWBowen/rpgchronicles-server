@@ -8,6 +8,12 @@ const mongoose = require('mongoose')
 const PORT = 5000
 
 const app = express()
+
+const corsOptions = {
+  origin: process.env.ORIGIN,
+  redentials: true
+}
+
 const dbuser = process.env.MONGODB_USER
 const dbpass = process.env.MONGODB_PASSWORD
 const dbname = process.env.MONGODB_DBNAME
@@ -22,8 +28,8 @@ mongoose.connection.once('open', () => {
   console.log('connected to database')
 })
 
-app.use(cors())
-server.applyMiddleware({ app })
+
+server.applyMiddleware({ app, cors: corsOptions })
 app.listen(PORT, () => {
   if(process.env.NODE_ENV='development')
     console.log(`The GraphQL server is running on http://localhost:${PORT}${server.graphqlPath}`)
