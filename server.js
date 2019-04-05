@@ -14,11 +14,8 @@ const corsOptions = {
   redentials: true
 }
 
-const dbuser = process.env.MONGODB_USER
-const dbpass = process.env.MONGODB_PASSWORD
-const dbname = process.env.MONGODB_DBNAME
 mongoose.connect(
-  'mongodb://' + dbuser + ':' + dbpass + '.mlab.com:63905/' + dbname,
+  `mongodb://${procss.env.MONGODB_USER}:${procss.env.MONGODB_PASSWORD}@ds163905.mlab.com:63905/${process.env.MONGODB_DBNAME}`,
   {
     useCreateIndex: true,
     useNewUrlParser: true
