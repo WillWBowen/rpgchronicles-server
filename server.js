@@ -5,7 +5,7 @@ const {graphqlExpress } = require('apollo-server-express')
 const server = require('./data/schema')
 const mongoose = require('mongoose')
 
-const PORT = 5000
+const PORT = process.env.PORT || 5000
 
 const app = express()
 
@@ -31,5 +31,5 @@ app.listen(PORT, () => {
   if(process.env.NODE_ENV=='development')
     console.log(`The GraphQL server is running on http://localhost:${PORT}${server.graphqlPath}`)
   else
-    console.log('This is the production server.')
+    console.log(`The GraphQL server is running on port ${PORT}.`)
 })
