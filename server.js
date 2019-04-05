@@ -31,7 +31,7 @@ mongoose.connection.once('open', () => {
 
 server.applyMiddleware({ app, cors: corsOptions })
 app.listen(PORT, () => {
-  if(process.env.NODE_ENV='development')
+  if(process.env.NODE_ENV=='development')
     console.log(`The GraphQL server is running on http://localhost:${PORT}${server.graphqlPath}`)
   else
     console.log('This is the production server.')
