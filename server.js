@@ -11,7 +11,7 @@ const app = express()
 
 const corsOptions = {
   origin: process.env.ORIGIN,
-  redentials: true
+  credentials: true
 }
 
 mongoose.connect(
