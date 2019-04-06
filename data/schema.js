@@ -57,6 +57,9 @@ const typeDefs = gql`
       updateSession(input: UpdateSessionInput!): Session
       updateCharacter(id: ID!, user: ID!, name: String!, age: Int!, race: String!, class: String!): Character
 
+      # Delete
+      deleteCharacter(character: ID!): Character
+
     }
 
     input CreateCampaignInput {

@@ -4,6 +4,7 @@ require('dotenv').config();
 const {graphqlExpress } = require('apollo-server-express')
 const server = require('./data/schema')
 const mongoose = require('mongoose')
+mongoose.set('useFindAndModify', false)
 
 const PORT = process.env.PORT || 5000
 

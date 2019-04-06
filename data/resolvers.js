@@ -51,6 +51,16 @@ const resolvers = {
           console.log(e)
           throw new AuthenticationError('You must be logged in to do this')
         }
+      },
+
+      async deleteCharacter(_, {character}, {user}) {
+        try {
+          const email = await user
+          return await Character.findByIdAndRemove(character)
+        } catch(e) {
+          console.log(e)
+          throw new AuthenticationError('You must be logged in to do this')
+        }
       }
     },
     Campaign: {
